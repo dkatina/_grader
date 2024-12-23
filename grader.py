@@ -7,9 +7,9 @@ current_file_path = os.path.abspath(__file__)
 current_folder_path = os.path.dirname(current_file_path)
 
 students ={
-"Aliyah2": "https://github.com/justliya/SQL-Flask-API.git?authuser=0"
+    "Dylan": "https://github.com/dkatina/pet-api.git"
 }
-
+    
 flask = True
 
 for name, url in students.items():
