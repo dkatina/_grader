@@ -7,30 +7,21 @@ current_file_path = os.path.abspath(__file__)
 current_folder_path = os.path.dirname(current_file_path)
 
 students ={
-    # "Jurgita":"",
-    # "sheridan":"",
-    # "jeremy":"",
-    # "desiree":"",
-    # "mani":"",
-    # "mason":"",
-    # "leisa":"",
-    # "Val":"",
-    # "keanu":"",
-    # "Cyn":"",
-    # "Danny":""
+"Dylan":"https://github.com/badreddin98/advanced-e-commerce-api",
 }
 
-
+flask = True
 
 for name, url in students.items():
     os.system(f"git clone {url} {name}")
-    if os.path.isfile("./.env"):
-        shutil.copyfile("./.env", f"./{name}/.env")
-        print(name)
+    if flask:
+        shutil.copyfile("./_grader/.env", f"./{name}/.env")
+        print(name)#
         os.chdir(f"{name}")
-        if os.path.isdir("./migrations"):
-            print("here")
-            shutil.rmtree('migrations')
+        if os.path.isdir("./venv"):
+            shutil.rmtree('venv')
+        elif os.path.isdir("./myvenv"):
+            shutil.rmtree('myvenv')
         if os.name == "nt":
             subprocess.call(f"start {current_folder_path}\\flask-load.bat", shell=True)            
         if os.name != "nt":
