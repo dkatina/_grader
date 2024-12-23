@@ -7,13 +7,15 @@ current_file_path = os.path.abspath(__file__)
 current_folder_path = os.path.dirname(current_file_path)
 
 students ={
-"Dylan":"https://github.com/badreddin98/advanced-e-commerce-api",
+"Aliyah2": "https://github.com/justliya/SQL-Flask-API.git?authuser=0"
 }
 
 flask = True
 
 for name, url in students.items():
-    os.system(f"git clone {url} {name}")
+    new_url = url.split("?authuser=0")
+    print(new_url[0])
+    os.system(f"git clone {new_url[0]} {name}")
     if flask:
         shutil.copyfile("./_grader/.env", f"./{name}/.env")
         print(name)#
